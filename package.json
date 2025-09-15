@@ -1,0 +1,15 @@
+{
+  "name": "starter-hn-classifier",
+  "version": "1.0.0",
+  "description": "HN item classifier using pgflow workflow engine",
+  "scripts": {
+    "start": "npx -y supabase@latest start",
+    "serve": "npx -y supabase@latest functions serve",
+    "status": "npx -y supabase@latest status",
+    "compare": "cd supabase/functions && deno run --allow-env --allow-net --env=.env _utils/compare.ts",
+    "compare:limit": "cd supabase/functions && deno run --allow-env --allow-net --env=.env _utils/compare.ts --limit"
+  },
+  "keywords": ["pgflow", "supabase", "hackernews", "classification", "llm"],
+  "author": "",
+  "license": "MIT"
+}

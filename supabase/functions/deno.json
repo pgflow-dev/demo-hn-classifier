@@ -1,0 +1,12 @@
+{
+  "imports": {
+    "@pgflow/edge-worker": "jsr:@pgflow/edge-worker@0.6.1",
+    "@pgflow/dsl": "npm:@pgflow/dsl@0.6.1",
+    "@pgflow/dsl/supabase": "npm:@pgflow/dsl@0.6.1/supabase",
+    "ai": "npm:ai@latest",
+    "@ai-sdk/openai": "npm:@ai-sdk/openai@latest",
+    "openai": "https://esm.sh/openai@latest",
+    "postgres": "npm:postgres@3.4.5",
+    "zod": "npm:zod@latest"
+  }
+}
