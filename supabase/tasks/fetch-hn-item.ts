@@ -2,8 +2,8 @@
  * Fetch HN story for classification
  */
 
-import { extractItemId } from "../_utils/hn.ts";
-import { HnStorySchema, type HnItem } from "../_utils/hnSchemas.ts";
+import { extractItemId } from "./utils/hn.ts";
+import { HnStorySchema, type HnItem } from "./utils/hn-schemas.ts";
 
 export async function fetchHnItem(url: string): Promise<HnItem> {
   const itemId = extractItemId(url);

@@ -4,7 +4,7 @@
 
 import { generateObject } from "ai";
 import { openai } from "@ai-sdk/openai";
-import { ClassificationSchema } from "../_utils/classificationSchema.ts";
+import { ClassificationSchema } from "./utils/classification-schema.ts";
 
 /**
  * v2 Classification: Enhanced with more detailed rubric and stricter criteria

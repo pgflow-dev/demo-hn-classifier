@@ -21,7 +21,7 @@ graph TD
     style Classification fill:#1e293b,color:#fff
 ```
 
-**Source files:** [Flow Definition](./supabase/functions/_flows/classifyHnItem.ts) | [Original Classify Task](./supabase/functions/_tasks/classify.ts) | [Model-Parametrized Version](./supabase/functions/_tasks/classifyV2.ts)
+**Source files:** [Flow Definition](./supabase/flows/classify-hn-item.ts) | [Original Classify Task](./supabase/tasks/classify.ts) | [Model-Parametrized Version](./supabase/tasks/classify-v2.ts)
 
 # Quick Start
 
@@ -90,8 +90,8 @@ SELECT pgflow.prune_data_older_than(make_interval(days => 0));
 ## Compare Models
 ```bash
 npm run compare
-# or
-npm run compare:limit -- --limit 10
+# or with custom limit
+npm run compare -- --limit 10
 ```
 
 The compare script demonstrates pgflow's replay capability with no magic - it simply:
@@ -104,3 +104,7 @@ This lets you test how prompt or model changes affect outputs without re-fetchin
 ---
 
 [Full README](./README_FULL.md) | [pgflow.dev](https://www.pgflow.dev/)
+
+---
+
+**Note:** This repo was updated for [pgflow 0.12.0](https://pgflow.dev/news/pgflow-0-12-0-simpler-handler-signatures-for-flow-composition/) which changed handler signatures.

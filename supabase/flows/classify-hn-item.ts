@@ -7,9 +7,9 @@
  */
 
 import { Flow } from "@pgflow/dsl/supabase";
-import { fetchHnItem } from "../_tasks/fetchHnItem.ts";
-import { fetchHnFirstComment } from "../_tasks/fetchHnFirstComment.ts";
-import { classify } from "../_tasks/classify.ts";
+import { fetchHnItem } from "../tasks/fetch-hn-item.ts";
+import { fetchHnFirstComment } from "../tasks/fetch-hn-first-comment.ts";
+import { classify } from "../tasks/classify.ts";
 
 // Flow input type
 export type FlowInput = {
@@ -17,12 +17,12 @@ export type FlowInput = {
 };
 
 // Define the flow using correct DSL syntax
-export default new Flow<FlowInput>({
+export const ClassifyHnItem = new Flow<FlowInput>({
   slug: "classifyHnItem",
 })
-  .step({ slug: "item" }, (input) => fetchHnItem(input.run.url))
-  .step({ slug: "firstComment" }, (input) => fetchHnFirstComment(input.run.url))
+  .step({ slug: "item" }, (flowInput) => fetchHnItem(flowInput.url))
+  .step({ slug: "firstComment" }, (flowInput) => fetchHnFirstComment(flowInput.url))
   .step(
     { slug: "classification", dependsOn: ["item", "firstComment"] },
-    (input) => classify(input.item.title, input.firstComment.text),
+    (deps) => classify(deps.item.title, deps.firstComment.text),
   );

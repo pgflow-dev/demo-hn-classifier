@@ -11,18 +11,18 @@
  */
 
 import postgres from "postgres";
-import { classifyV2 } from "../_tasks/classifyV2.ts";
-import { loadDataset } from "./loadDataset.ts";
-import classifyHnItemFlow from "../_flows/classifyHnItem.ts";
+import { classifyV2 } from "../classify-v2.ts";
+import { loadDataset } from "./load-dataset.ts";
+import { ClassifyHnItem } from "../../flows/classify-hn-item.ts";
 import type { StepInput, StepOutput } from "@pgflow/dsl";
 
 // Use pgflow utility types for type inference
 type ClassificationInput = StepInput<
-  typeof classifyHnItemFlow,
+  typeof ClassifyHnItem,
   "classification"
 >;
 type ClassificationOutput = StepOutput<
-  typeof classifyHnItemFlow,
+  typeof ClassifyHnItem,
   "classification"
 >;
 

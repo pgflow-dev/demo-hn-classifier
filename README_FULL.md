@@ -19,7 +19,7 @@ graph TD
     style Classification fill:#1e293b,color:#fff
 ```
 
-**Source files:** [Flow Definition](./supabase/functions/_flows/classifyHnItem.ts) | [Original Classify Task](./supabase/functions/_tasks/classify.ts) | [Model-Parametrized Version](./supabase/functions/_tasks/classifyV2.ts)
+**Source files:** [Flow Definition](./supabase/flows/classify-hn-item.ts) | [Original Classify Task](./supabase/tasks/classify.ts) | [Model-Parametrized Version](./supabase/tasks/classify-v2.ts)
 
 ## Setup (one time)
 
@@ -210,7 +210,7 @@ For comprehensive monitoring, see [Monitor flow execution | pgflow](https://www.
 ### Model Evolution
 
 - **v1 (classify.ts)**: Uses `gpt-5-mini` with the original conservative prompt for production classification
-- **v2 (classifyV2.ts)**: Enhanced prompt with detailed rubric, used for comparison testing
+- **v2 (classify-v2.ts)**: Enhanced prompt with detailed rubric, used for comparison testing
 
 ## The Compare Script
 
@@ -219,7 +219,7 @@ Test classification consistency across different GPT-5 models using the enhanced
 ```bash
 npm run compare
 # or with custom limit
-npm run compare:limit -- --limit 10
+npm run compare -- --limit 10
 ```
 
 **What it does:**

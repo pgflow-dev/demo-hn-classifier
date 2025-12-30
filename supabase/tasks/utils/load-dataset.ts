@@ -3,12 +3,12 @@
  */
 
 import postgres from "postgres";
-import classifyHnItemFlow from "../_flows/classifyHnItem.ts";
+import { ClassifyHnItem } from "../../flows/classify-hn-item.ts";
 import type { StepInput, StepOutput } from "@pgflow/dsl";
 
 export interface Datapoint {
-  input: StepInput<typeof classifyHnItemFlow, "classification">;
-  output: StepOutput<typeof classifyHnItemFlow, "classification">;
+  input: StepInput<typeof ClassifyHnItem, "classification">;
+  output: StepOutput<typeof ClassifyHnItem, "classification">;
   run_id: string;
 }
 

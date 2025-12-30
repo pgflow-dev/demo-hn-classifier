@@ -6,8 +6,7 @@
     "start": "npx -y supabase@latest start",
     "serve": "npx -y supabase@latest functions serve",
     "status": "npx -y supabase@latest status",
-    "compare": "cd supabase/functions && deno run --allow-env --allow-net --env=.env _utils/compare.ts",
-    "compare:limit": "cd supabase/functions && deno run --allow-env --allow-net --env=.env _utils/compare.ts --limit"
+    "compare": "deno run --allow-env --allow-net --env=supabase/functions/.env --config=supabase/functions/deno.json supabase/tasks/utils/compare.ts"
   },
   "keywords": ["pgflow", "supabase", "hackernews", "classification", "llm"],
   "author": "",

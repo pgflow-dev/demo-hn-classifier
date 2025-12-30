@@ -2,13 +2,13 @@
  * Fetch first comment for additional classification context
  */
 
-import { extractItemId } from "../_utils/hn.ts";
+import { extractItemId } from "./utils/hn.ts";
 import {
   HnStorySchema,
   HnCommentSchema,
   cleanHtml,
   type HnComment,
-} from "../_utils/hnSchemas.ts";
+} from "./utils/hn-schemas.ts";
 
 export async function fetchHnFirstComment(url: string): Promise<HnComment> {
   const itemId = extractItemId(url);
